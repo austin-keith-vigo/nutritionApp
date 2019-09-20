@@ -6,10 +6,18 @@ import {
   Button
 } from 'react-native';
 
+//Used Components
+import {
+  SearchResultsList
+} from './../components';
+
+//Houses a search button and list to present
+//values of the search button
 class HomeScreen extends Component{
   render(){
     return(
       <View style={styles.viewStyle}>
+        <SearchResultsList/>
       </View>
     );
   }
@@ -17,9 +25,8 @@ class HomeScreen extends Component{
 
 const styles = StyleSheet.create({
   viewStyle: {
-    flex: 1,
-    backgroundColor: 'blue'
+    flex: 1
   }
-});
+})
 
 export default HomeScreen;
