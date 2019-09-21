@@ -1,1 +1,2 @@
-export SearchResultsList from './SearchResultsList';
+export SearchBar from './SearchBar';
+export SearchBarsList from './SearchBarsList';
