@@ -1,6 +1,8 @@
 import { combineReducers } from 'redux';
-import searchResultsReducer from './searchResultsReducer';
+import SearchBars from './SearchBarsReducers';
+import RecipesResults from './RecipesResultsReducers';
 
 export default combineReducers({
-  searchResults: searchResultsReducer
+  searchBars: SearchBars,
+  recipesResults: RecipesResults
 });
