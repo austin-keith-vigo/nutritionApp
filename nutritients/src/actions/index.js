@@ -4,7 +4,8 @@ import {
   ADD_INGREDIENT,
   ON_CHANGE_TEXT,
   SEARCH_BUTTON_PRESSED,
-  GET_RECIPES_SUCCESS
+  GET_RECIPES_SUCCESS,
+  MORE_INFO_BUTTON_PRESSED
 } from './types';
 
 import { API_KEY, NUM_OF_RESULTS } from './../Globals';
@@ -65,5 +66,12 @@ export const search = (activeSearchBars) => {
         });
       })
       .catch((error) => console.log(error));
+  };
+};
+
+export const moreInfoButtonPressed = (id) => {
+  return {
+    type: MORE_INFO_BUTTON_PRESSED,
+    payload: id
   };
 };

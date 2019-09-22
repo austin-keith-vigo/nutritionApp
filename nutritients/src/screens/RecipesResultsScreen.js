@@ -5,12 +5,25 @@ import {
   Button
 } from 'react-native';
 import { connect } from 'react-redux';
+import { RecipesList } from './../components';
 
 class RecipesResultsScreen extends Component {
+
+  //Hide the navigation header
+  static navigationOptions = {
+    headerTitle: '',
+    headerStyle: {
+      height: 0,
+      borderBottomWidth: 0
+    }
+  };
+
   render() {
     return (
       <View style={styles.viewStyle}>
-        {console.log(this.props.recipesResults)}
+        <RecipesList
+          recipes={this.props.recipesResults}
+        />
       </View>
     );
   }
@@ -18,8 +31,7 @@ class RecipesResultsScreen extends Component {
 
 const styles = {
   viewStyle: {
-    flex: 1,
-    backgroundColor: 'red'
+    flex: 1
   }
 };
 

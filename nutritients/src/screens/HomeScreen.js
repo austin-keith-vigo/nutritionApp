@@ -14,6 +14,15 @@ import {
 //Presents an a list of search bars. Each search bar is 1 ingredient
 class HomeScreen extends Component{
 
+  //Hide the navigation header
+  static navigationOptions = {
+    headerTitle: '',
+    headerStyle: {
+      height: 0,
+      borderBottomWidth: 0
+    }
+  };
+
   render(){
     return(
       <View style={styles.viewStyle}>
