@@ -35,7 +35,7 @@ export const onChangeText = (text, index, activeSearchBars) => {
 };
 
 export const search = (activeSearchBars) => {
-  
+
   return {
     type: SEARCH_BUTTON_PRESSED
   };

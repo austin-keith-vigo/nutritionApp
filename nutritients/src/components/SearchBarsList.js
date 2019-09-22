@@ -24,7 +24,8 @@ class SearchBarsList extends Component{
 
   //Triggers search with the given ingredients
   searchButtonPressed() {
-      this.props.search(this.props.activeSearchBars);
+    this.props.search(this.props.activeSearchBars);
+    this.props.navigation.navigate('RecipesResults');
   }
 
   //Controls how many searchBars to render

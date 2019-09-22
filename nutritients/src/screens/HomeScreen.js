@@ -19,7 +19,9 @@ class HomeScreen extends Component{
   render(){
     return(
       <View style={styles.viewStyle}>
-        <SearchBarsList/>
+        <SearchBarsList
+          navigation={this.props.navigation}
+        />
       </View>
     );
   }

@@ -10,13 +10,15 @@ import { createAppContainer } from 'react-navigation';
 
 //Screens
 import {
-  HomeScreen
+  HomeScreen,
+  RecipesResultsScreen
 } from './screens';
 
 //Navigation Setup
 let MainStack = createStackNavigator(
   {
-    Home: HomeScreen
+    Home: HomeScreen,
+    RecipesResults: RecipesResultsScreen
   },
   {
     intialRouteName: "Home"
