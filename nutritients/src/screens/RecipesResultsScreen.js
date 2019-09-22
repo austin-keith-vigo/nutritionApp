@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import {
   View,
-  FlatList
+  FlatList,
+  Button
 } from 'react-native';
 import { connect } from 'react-redux';
 
@@ -9,6 +10,7 @@ class RecipesResultsScreen extends Component {
   render() {
     return (
       <View style={styles.viewStyle}>
+        {console.log(this.props.recipesResults)}
       </View>
     );
   }

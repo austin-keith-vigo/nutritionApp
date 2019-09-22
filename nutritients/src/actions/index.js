@@ -1,5 +1,5 @@
 import React from 'react';
-
+import TestData from './../TestData.json';
 import {
   ADD_INGREDIENT,
   ON_CHANGE_TEXT,
@@ -59,10 +59,9 @@ export const search = (activeSearchBars) => {
     //fetch the data and re-render the recipesResults once finished
     fetch(url)
       .then((data) => {
-        console.log(data);
         dispatch({
           type: GET_RECIPES_SUCCESS,
-          payload: ['test']
+          payload: TestData
         });
       })
       .catch((error) => console.log(error));
