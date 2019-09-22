@@ -11,7 +11,8 @@ import SearchBar from './SearchBar';
 
 //actions
 import {
-  addIngredient
+  addIngredient,
+  search
 } from './../actions';
 
 class SearchBarsList extends Component{
@@ -21,13 +22,18 @@ class SearchBarsList extends Component{
     this.props.addIngredient(this.props.activeSearchBars);
   }
 
+  //Triggers search with the given ingredients
+  searchButtonPressed() {
+      this.props.search(this.props.activeSearchBars);
+  }
+
   //Controls how many searchBars to render
   renderFlatList() {
 
     return (
       <FlatList
         data={this.props.activeSearchBars}
-        renderItem = {({item}) => item}
+        renderItem = {({item}) => item.searchBar}
         keyExtractor = {(item,index) => index.toString()}
       />
     );
@@ -40,6 +46,10 @@ class SearchBarsList extends Component{
         <Button
           title="New Ingredient"
           onPress={this.addButtonPressed.bind(this)}
+        />
+        <Button
+          title="Search"
+          onPress={this.searchButtonPressed.bind(this)}
         />
       </View>
     );
@@ -54,7 +64,8 @@ const mapStateToProps = state => {
 }
 
 const actions = {
-  addIngredient
+  addIngredient,
+  search
 };
 
 export default connect(mapStateToProps, actions)(SearchBarsList);

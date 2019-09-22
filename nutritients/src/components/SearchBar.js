@@ -12,6 +12,7 @@ class SearchBar extends Component{
   onChangeText(text) {
     this.props.onChangeText(text, this.props.index, this.props.activeSearchBars);
   }
+
   render() {
     return(
       <TextInput
