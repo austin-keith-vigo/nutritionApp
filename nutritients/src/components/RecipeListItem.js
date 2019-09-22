@@ -7,6 +7,7 @@ import {
 } from 'react-native';
 import { connect } from 'react-redux';
 import { moreInfoButtonPressed } from './../actions';
+import Ingredients from './Ingredients';
 
 class RecipeListItem extends Component {
 
@@ -18,7 +19,9 @@ class RecipeListItem extends Component {
   //Either render the more info button or the expanded info
   renderInfoView() {
     if (this.props.expandedRecipe == this.props.recipe.id) {
-      return <View style={styles.infoViewStyle}/>
+      return (
+        <Ingredients recipe={this.props.recipe}/>
+      );
     }
     return (
       <Button
@@ -61,11 +64,9 @@ const styles = {
     fontWeight: 'bold',
     marginTop: 5,
     marginBottom: 5
-  },
-  infoViewStyle: {
-    width: '100%'
   }
-}
+};
+
 const actions = {
   moreInfoButtonPressed
 };
