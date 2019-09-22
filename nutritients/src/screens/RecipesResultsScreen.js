@@ -3,11 +3,13 @@ import {
   View,
   FlatList
 } from 'react-native';
+import { connect } from 'react-redux';
 
 class RecipesResultsScreen extends Component {
   render() {
     return (
-      <View style={styles.viewStyle}/>
+      <View style={styles.viewStyle}>
+      </View>
     );
   }
 }
@@ -19,4 +21,9 @@ const styles = {
   }
 };
 
-export default RecipesResultsScreen;
+const mapStateToProps = state => {
+  return {
+    recipesResults: state.recipesResults.recipesResultsData
+  };
+};
+export default connect(mapStateToProps)(RecipesResultsScreen);

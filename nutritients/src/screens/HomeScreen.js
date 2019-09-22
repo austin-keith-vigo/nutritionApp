@@ -11,8 +11,6 @@ import {
   SearchBarsList
 } from './../components';
 
-const API_KEY = "e55c80982c814318ba1ad19d7708978e";
-
 //Presents an a list of search bars. Each search bar is 1 ingredient
 class HomeScreen extends Component{
 
