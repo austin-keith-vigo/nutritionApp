@@ -1,18 +1,26 @@
+import React from 'react';
+
 import {
   ADD_INGREDIENT,
-  REMOVE_INGREDIENT
+  ON_CHANGE_TEXT
 } from './types';
 
-export const addIngredient = (numOfSearchBars) => {
+import {
+  SearchBar
+} from './../components';
+
+export const addIngredient = (activeSearchBars) => {
+  let newActiveSearchBars = [...activeSearchBars];
+  let newSearchBarIndex = activeSearchBars.length;
+  newActiveSearchBars.push(<SearchBar index={newSearchBarIndex}/>);
+
   return {
     type: ADD_INGREDIENT,
-    payload: numOfSearchBars + 1
+    payload: newActiveSearchBars
   };
 };
 
-export const removeIngredient = (numOfSearchBars) => {
-  return {
-    type: REMOVE_INGREDIENT,
-    payload: numOfSearchBars - 1
-  };
+export const onChangeText = (text, index, activeSearchBars) => {
+  console.log(text, index, activeSearchBars);
+
 };

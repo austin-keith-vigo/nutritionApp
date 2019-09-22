@@ -11,34 +11,24 @@ import SearchBar from './SearchBar';
 
 //actions
 import {
-  addIngredient,
-  removeIngredient 
+  addIngredient
 } from './../actions';
 
 class SearchBarsList extends Component{
 
   //Adds a new search bar to the flatList
   addButtonPressed() {
-    this.props.addIngredient(this.props.numOfSearchBars);
-  }
-
-  //Removes the last ingredient
-  removeButtonPressed() {
-    this.props.removeIngredient(this.props.numOfSearchBars);
+    this.props.addIngredient(this.props.activeSearchBars);
   }
 
   //Controls how many searchBars to render
   renderFlatList() {
-    let flatListData = [];
-    for (index = 0; index < this.props.numOfSearchBars; ++index) {
-      flatListData.push({key: index.toString(), searchBar: <SearchBar/>});
-    }
 
     return (
       <FlatList
-        data={flatListData}
-        renderItem = {({item}) => item.searchBar}
-        keyExtractor = {(item) => item.key}
+        data={this.props.activeSearchBars}
+        renderItem = {({item}) => item}
+        keyExtractor = {(item,index) => index.toString()}
       />
     );
   }
@@ -51,24 +41,20 @@ class SearchBarsList extends Component{
           title="New Ingredient"
           onPress={this.addButtonPressed.bind(this)}
         />
-        <Button
-          title="Remove Ingredient"
-          onPress={this.removeButtonPressed.bind(this)}
-        />
       </View>
     );
   }
 }
 
 const mapStateToProps = state => {
+  const { activeSearchBars } = state.searchBars;
   return {
-    numOfSearchBars: state.searchBars.numOfSearchBars
+    activeSearchBars: activeSearchBars
   };
 }
 
 const actions = {
-  addIngredient,
-  removeIngredient
+  addIngredient
 };
 
 export default connect(mapStateToProps, actions)(SearchBarsList);
